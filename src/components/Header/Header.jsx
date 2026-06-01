@@ -16,10 +16,6 @@ function Header() {
 
   return (
     <header className="w-full bg-white text-black border-b border-neutral-100 sticky top-0 z-50">
-      {/* Top Banner (Optional for luxury announcement feel) */}
-      <div className="bg-black text-white text-[10px] tracking-widest text-center py-2 uppercase font-medium">
-        Free shipping on orders over 2.000.000đ | Miễn phí vận chuyển toàn quốc
-      </div>
 
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
