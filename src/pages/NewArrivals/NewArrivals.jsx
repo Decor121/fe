@@ -16,7 +16,7 @@ function NewArrivals() {
   useEffect(() => {
     const fetchCombos = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/combos');
+        const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/combos`);
         if (res.ok) {
           const data = await res.json();
           setCombos(data);

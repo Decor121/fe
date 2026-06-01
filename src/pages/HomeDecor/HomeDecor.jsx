@@ -35,8 +35,9 @@ function HomeDecor() {
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setLoading(true);
       try {
-        const res = await fetch(`http://localhost:5000/api/products?category=${activeCategory}&sortBy=${sortBy}`);
+        const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/products?category=${activeCategory}&sortBy=${sortBy}`);
         if (res.ok) {
           const data = await res.json();
           setItems(data);
