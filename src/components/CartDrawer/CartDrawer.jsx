@@ -22,7 +22,7 @@ function CartDrawer() {
 
   const handleCheckout = () => {
     if (cart.length === 0) return;
-    alert('Cảm ơn bạn đã đặt hàng! Hanoia sẽ liên hệ trực tiếp qua Email/Số điện thoại để xác nhận đơn hàng sớm nhất.');
+    alert('Cảm ơn bạn đã đặt hàng! Home Decor sẽ liên hệ trực tiếp qua Email/Số điện thoại để xác nhận đơn hàng sớm nhất.');
     clearCart();
     setIsCartOpen(false);
   };
@@ -38,7 +38,7 @@ function CartDrawer() {
       <div className="absolute inset-y-0 right-0 max-w-full flex pl-10">
         {/* Drawer Panel */}
         <div className="w-screen max-w-md bg-white shadow-2xl flex flex-col justify-between animate-in slide-in-from-right duration-300 border-l border-neutral-100">
-          
+
           {/* Header */}
           <div className="px-6 py-5 border-b border-neutral-100 flex items-center justify-between">
             <h2 className="text-sm font-bold tracking-widest text-neutral-900 uppercase">
@@ -66,7 +66,7 @@ function CartDrawer() {
                 <div>
                   <h3 className="text-xs uppercase tracking-widest text-neutral-800 font-semibold">Giỏ hàng trống</h3>
                   <p className="text-xs text-neutral-400 font-light mt-1.5 leading-relaxed">
-                    Bạn chưa chọn tác phẩm nào. Khám phá các bộ sưu tập của Hanoia để lựa chọn sản phẩm phù hợp.
+                    Bạn chưa chọn tác phẩm nào. Khám phá các bộ sưu tập của Home Decor để lựa chọn sản phẩm phù hợp.
                   </p>
                 </div>
                 <button
@@ -154,7 +154,7 @@ function CartDrawer() {
                 <span className="text-lg font-bold text-neutral-900">{calculateTotal().toLocaleString('vi-VN')}₫</span>
               </div>
               <p className="text-[10px] text-neutral-400 font-light leading-relaxed">
-                * Thuế GTGT và chi phí vận chuyển sẽ được miễn phí toàn quốc theo chính sách Hanoia Luxury.
+                * Thuế GTGT và chi phí vận chuyển sẽ được miễn phí toàn quốc theo chính sách Home Decor Luxury.
               </p>
               <div className="flex gap-3">
                 <button

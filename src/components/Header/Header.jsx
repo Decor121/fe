@@ -11,7 +11,7 @@ function Header() {
   const navItems = [
     { label: 'HÀNG MỚI', link: '/hang-moi', isRoute: true },
     { label: 'TRANG TRÍ NHÀ', link: '/trang-tri-nha', isRoute: true },
-    { label: 'CÂU CHUYỆN HANOIA', link: '/cau-chuyen', isRoute: true }
+    { label: 'CÂU CHUYỆN Home Decor', link: '/cau-chuyen', isRoute: true }
   ];
 
   return (
@@ -26,8 +26,8 @@ function Header() {
 
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="font-serif text-3xl font-normal tracking-tight hover:opacity-80 transition-opacity">
-              hanoia
+            <Link to="/" className="hover:opacity-80 transition-opacity flex items-center">
+              <img src="/homedecorbg.png" alt="Decor Logo" className="h-12 w-auto object-contain" />
             </Link>
           </div>
 

@@ -87,7 +87,7 @@ function Admin() {
       {/* Sidebar Navigation */}
       <aside className={`fixed inset-y-0 left-0 w-64 bg-white border-r border-neutral-200 z-40 transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:translate-x-0 md:flex flex-col`}>
         <div className="p-6 hidden md:flex items-center justify-center border-b border-neutral-200">
-          <Link to="/" className="font-serif text-2xl font-normal tracking-tight">hanoia</Link>
+          <Link to="/" className="font-serif text-2xl font-normal tracking-tight">Home Decor</Link>
         </div>
 
         <div className="p-6 md:hidden flex items-center justify-between border-b border-neutral-200">

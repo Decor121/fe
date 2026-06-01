@@ -69,18 +69,18 @@ function Register() {
 
   return (
     <div className="min-h-screen bg-[#efefef] flex flex-col font-sans text-neutral-800 relative selection:bg-brand-500 selection:text-white">
-      
+
       {/* Minimal Header */}
       <header className="w-full bg-white h-20 flex items-center justify-center border-b border-neutral-200/50">
         <Link to="/" className="font-serif text-3xl font-normal tracking-tight text-neutral-900 hover:opacity-85 transition-opacity">
-          hanoia
+          Home Decor
         </Link>
       </header>
 
       {/* Main Content Area */}
       <main className="flex-1 flex items-center justify-center px-6 py-12">
         <div className="w-full max-w-[420px] bg-white p-8 md:p-10 shadow-[0_4px_25px_rgba(0,0,0,0.04)] rounded-none border border-neutral-200/40">
-          
+
           <h2 className="text-[17px] font-bold text-center text-neutral-800 tracking-wider uppercase mb-8 font-sans">
             TẠO TÀI KHOẢN MỚI
           </h2>
@@ -208,7 +208,7 @@ function Register() {
         <button
           onClick={() => setIsChatOpen(!isChatOpen)}
           className="w-14 h-14 rounded-full bg-[#3c3a37] text-white flex items-center justify-center shadow-lg hover:bg-neutral-800 transition-all duration-300 cursor-pointer border border-neutral-700 hover:scale-105 active:scale-95"
-          aria-label="Chat with Hanoia"
+          aria-label="Chat with Home Decor"
         >
           <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0zm0 0h-.375M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 0 1-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -225,7 +225,7 @@ function Register() {
                 h
               </div>
               <div>
-                <h5 className="text-[13px] font-bold tracking-wide">Hanoia Assistant</h5>
+                <h5 className="text-[13px] font-bold tracking-wide">Home Decor Assistant</h5>
                 <span className="text-[10px] text-neutral-300/80">Trực tuyến</span>
               </div>
             </div>
@@ -243,11 +243,10 @@ function Register() {
             {chatHistory.map((chat, idx) => (
               <div
                 key={idx}
-                className={`max-w-[80%] rounded-2xl p-3 text-xs leading-relaxed ${
-                  chat.sender === 'bot'
+                className={`max-w-[80%] rounded-2xl p-3 text-xs leading-relaxed ${chat.sender === 'bot'
                     ? 'bg-white text-neutral-800 self-start shadow-sm border border-neutral-100 rounded-tl-none'
                     : 'bg-[#b08263] text-white self-end rounded-tr-none'
-                }`}
+                  }`}
               >
                 {chat.text}
               </div>

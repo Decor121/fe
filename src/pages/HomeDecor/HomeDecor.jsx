@@ -9,7 +9,7 @@ function HomeDecor() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [sortBy, setSortBy] = useState('newest');
   const [items, setItems] = useState([]);
-  
+
   // Selected product detail view state
   const [selectedProduct, setSelectedProduct] = useState(location.state?.selectedProduct || null);
 
@@ -55,7 +55,7 @@ function HomeDecor() {
     return (
       <section className="py-20 lg:py-28 bg-white min-h-screen text-neutral-800 border-b border-neutral-100 animate-in fade-in duration-500">
         <div className="max-w-7xl mx-auto px-6">
-          
+
           {/* Back button & Breadcrumbs */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <button
@@ -72,7 +72,7 @@ function HomeDecor() {
               </svg>
               Quay lại danh sách
             </button>
-            
+
             {/* Breadcrumbs */}
             <div className="text-xs uppercase tracking-widest text-neutral-400 font-light flex flex-wrap items-center gap-1.5">
               <span className="cursor-pointer hover:text-neutral-800" onClick={() => setSelectedProduct(null)}>Trang Chủ</span>
@@ -84,7 +84,7 @@ function HomeDecor() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            
+
             {/* Left Column: Images */}
             <div className="space-y-6">
               {/* Main Image */}
@@ -95,7 +95,7 @@ function HomeDecor() {
                   className="w-full h-full object-cover rounded-xl"
                 />
               </div>
-              
+
               {/* Gallery Thumbnails */}
               {item.images && item.images.length > 0 && (
                 <div className="flex gap-4">
@@ -103,9 +103,8 @@ function HomeDecor() {
                     <button
                       key={idx}
                       onClick={() => setActiveImageIndex(idx)}
-                      className={`w-20 h-20 bg-neutral-50 rounded-xl overflow-hidden border transition-all cursor-pointer ${
-                        activeImageIndex === idx ? 'border-[#b08263] ring-1 ring-[#b08263]/30' : 'border-neutral-200 hover:border-neutral-400'
-                      }`}
+                      className={`w-20 h-20 bg-neutral-50 rounded-xl overflow-hidden border transition-all cursor-pointer ${activeImageIndex === idx ? 'border-[#b08263] ring-1 ring-[#b08263]/30' : 'border-neutral-200 hover:border-neutral-400'
+                        }`}
                     >
                       <img src={img} alt={`${item.name} thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
                     </button>
@@ -134,7 +133,7 @@ function HomeDecor() {
                 <div className="text-neutral-500 font-light text-xs">
                   Mã sản phẩm: <span className="font-medium text-neutral-800">{item.code}</span>
                 </div>
-                
+
                 {/* Color Swatch */}
                 <div className="space-y-2">
                   <div className="text-xs text-neutral-500 font-light uppercase tracking-wider">
@@ -229,17 +228,15 @@ function HomeDecor() {
             <div className="flex border-b border-neutral-200">
               <button
                 onClick={() => setActiveTab('desc')}
-                className={`pb-4 px-6 text-sm font-medium tracking-wide border-b-2 transition-all cursor-pointer bg-transparent border-t-0 border-x-0 ${
-                  activeTab === 'desc' ? 'border-[#b08263] text-neutral-900' : 'border-transparent text-neutral-400 hover:text-neutral-600'
-                }`}
+                className={`pb-4 px-6 text-sm font-medium tracking-wide border-b-2 transition-all cursor-pointer bg-transparent border-t-0 border-x-0 ${activeTab === 'desc' ? 'border-[#b08263] text-neutral-900' : 'border-transparent text-neutral-400 hover:text-neutral-600'
+                  }`}
               >
                 Mô tả sản phẩm
               </button>
               <button
                 onClick={() => setActiveTab('specs')}
-                className={`pb-4 px-6 text-sm font-medium tracking-wide border-b-2 transition-all cursor-pointer bg-transparent border-t-0 border-x-0 ${
-                  activeTab === 'specs' ? 'border-[#b08263] text-neutral-900' : 'border-transparent text-neutral-400 hover:text-neutral-600'
-                }`}
+                className={`pb-4 px-6 text-sm font-medium tracking-wide border-b-2 transition-all cursor-pointer bg-transparent border-t-0 border-x-0 ${activeTab === 'specs' ? 'border-[#b08263] text-neutral-900' : 'border-transparent text-neutral-400 hover:text-neutral-600'
+                  }`}
               >
                 Đặc điểm
               </button>
@@ -279,7 +276,7 @@ function HomeDecor() {
   return (
     <section className="py-20 lg:py-28 bg-white min-h-screen text-neutral-800 border-b border-neutral-100">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Title */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <span className="text-xs font-semibold uppercase tracking-widest text-brand-600">
@@ -300,8 +297,8 @@ function HomeDecor() {
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
               className={`px-6 py-2.5 rounded-full text-xs font-medium tracking-wide transition-all cursor-pointer ${activeCategory === cat.id
-                  ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/10'
-                  : 'bg-neutral-50 text-neutral-600 border border-neutral-200 hover:text-black hover:bg-neutral-100'
+                ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/10'
+                : 'bg-neutral-50 text-neutral-600 border border-neutral-200 hover:text-black hover:bg-neutral-100'
                 }`}
             >
               {cat.label}
@@ -394,7 +391,7 @@ function HomeDecor() {
               Thiết Kế Không Gian <span className="font-semibold italic text-brand-600">Theo Yêu Cầu</span>
             </h3>
             <p className="text-xs sm:text-sm text-neutral-500 leading-relaxed font-light">
-              Hanoia cung cấp dịch vụ đo đạc, phác thảo 3D và chế tác sơn mài đo ni đóng giày phù hợp với từng phong cách kiến trúc đẳng cấp.
+              Home Decors cung cấp dịch vụ đo đạc, phác thảo 3D và chế tác sơn mài đo ni đóng giày phù hợp với từng phong cách kiến trúc đẳng cấp.
             </p>
           </div>
           <a

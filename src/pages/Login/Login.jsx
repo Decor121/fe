@@ -11,7 +11,7 @@ function Login() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [chatMessage, setChatMessage] = useState('');
   const [chatHistory, setChatHistory] = useState([
-    { sender: 'bot', text: 'Xin chào! Hanoia có thể giúp gì cho bạn?' }
+    { sender: 'bot', text: 'Xin chào! Home Decor có thể giúp gì cho bạn?' }
   ]);
 
   const navigate = useNavigate();
@@ -59,7 +59,7 @@ function Login() {
       {/* Minimal Header */}
       <header className="w-full bg-white h-20 flex items-center justify-center border-b border-neutral-200/50">
         <Link to="/" className="font-serif text-3xl font-normal tracking-tight text-neutral-900 hover:opacity-85 transition-opacity">
-          hanoia
+          Home Decor
         </Link>
       </header>
 
@@ -151,7 +151,7 @@ function Login() {
         <button
           onClick={() => setIsChatOpen(!isChatOpen)}
           className="w-14 h-14 rounded-full bg-[#3c3a37] text-white flex items-center justify-center shadow-lg hover:bg-neutral-800 transition-all duration-300 cursor-pointer border border-neutral-700 hover:scale-105 active:scale-95"
-          aria-label="Chat with Hanoia"
+          aria-label="Chat with Home Decor"
         >
           <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0zm0 0h-.375M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 0 1-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -168,7 +168,7 @@ function Login() {
                 h
               </div>
               <div>
-                <h5 className="text-[13px] font-bold tracking-wide">Hanoia Assistant</h5>
+                <h5 className="text-[13px] font-bold tracking-wide">Home Decor Assistant</h5>
                 <span className="text-[10px] text-neutral-300/80">Trực tuyến</span>
               </div>
             </div>
@@ -187,8 +187,8 @@ function Login() {
               <div
                 key={idx}
                 className={`max-w-[80%] rounded-2xl p-3 text-xs leading-relaxed ${chat.sender === 'bot'
-                    ? 'bg-white text-neutral-800 self-start shadow-sm border border-neutral-100 rounded-tl-none'
-                    : 'bg-[#b08263] text-white self-end rounded-tr-none'
+                  ? 'bg-white text-neutral-800 self-start shadow-sm border border-neutral-100 rounded-tl-none'
+                  : 'bg-[#b08263] text-white self-end rounded-tr-none'
                   }`}
               >
                 {chat.text}

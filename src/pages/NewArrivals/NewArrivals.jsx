@@ -43,7 +43,7 @@ function NewArrivals() {
             Combo Không Gian <span className="font-semibold italic text-[#b08263]">Nghệ Thuật</span>
           </h1>
           <p className="text-neutral-500 leading-relaxed font-light">
-            Mở đầu BST FW26, Hanoia tập trung khai thác bảng sắc thái và hình dáng của thiên nhiên. Từ những sáng tạo mới đến các thiết kế biểu tượng, tất cả đều được 'tinh chỉnh' để khoác lên mình diện mạo hoàn toàn mới. Đây cũng là dịp Hanoia tái ngộ người nghệ sĩ đồng hành thân thiết, cùng ghi lại những chuyển động giàu năng lượng và thu trọn thần thái kiêu kỳ của các loài chim nhiệt đới. Thông qua những đường nét tối giản và thanh thoát, BST khơi gợi sự kết nối giữa tâm hồn con người với sức sống rạng rỡ của thế giới tự nhiên.          </p>
+            Mở đầu BST FW26, Home Decor tập trung khai thác bảng sắc thái và hình dáng của thiên nhiên. Từ những sáng tạo mới đến các thiết kế biểu tượng, tất cả đều được 'tinh chỉnh' để khoác lên mình diện mạo hoàn toàn mới. Đây cũng là dịp Home Decor tái ngộ người nghệ sĩ đồng hành thân thiết, cùng ghi lại những chuyển động giàu năng lượng và thu trọn thần thái kiêu kỳ của các loài chim nhiệt đới. Thông qua những đường nét tối giản và thanh thoát, BST khơi gợi sự kết nối giữa tâm hồn con người với sức sống rạng rỡ của thế giới tự nhiên.          </p>
         </div>
 
         {/* Combos Loop */}
