@@ -1,14 +1,25 @@
 import { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 
 function HomeDecor() {
   const { addToCart } = useApp();
+  const location = useLocation();
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState('All');
   const [sortBy, setSortBy] = useState('newest');
   const [items, setItems] = useState([]);
   
   // Selected product detail view state
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(location.state?.selectedProduct || null);
+
+  useEffect(() => {
+    if (location.state?.selectedProduct) {
+      setSelectedProduct(location.state.selectedProduct);
+      // Clear state so refreshing the page doesn't re-open the product
+      navigate('.', { replace: true, state: {} });
+    }
+  }, [location.state?.selectedProduct, navigate]);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState('desc');

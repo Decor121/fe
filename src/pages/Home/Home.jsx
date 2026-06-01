@@ -7,6 +7,7 @@ function Home() {
   const [messages, setMessages] = useState([]);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitStatus, setSubmitStatus] = useState('');
+  const [topProducts, setTopProducts] = useState([]);
 
   const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
@@ -26,9 +27,14 @@ function Home() {
       })
       .catch((err) => {
         console.error(err);
-        setBackendStatus('offline');
         setDbStatus('offline');
       });
+
+    // Fetch top selling products
+    fetch(`${API_URL}/api/products?sortBy=bestSelling&limit=4`)
+      .then(res => res.json())
+      .then(data => setTopProducts(data))
+      .catch(err => console.error('Error fetching top products:', err));
   }, [API_URL]);
 
   const handleInputChange = (e) => {
@@ -163,33 +169,39 @@ function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { title: 'Living Lounge', type: 'Sleek Minimal', label: 'Cozy Accent' },
-              { title: 'Kitchen & Dine', type: 'Contemporary', label: 'Marble Tops' },
-              { title: 'Bespoke Bed', type: 'Quiet Comfort', label: 'Oak & Linen' },
-              { title: 'Home Office', type: 'Productive Sanctuary', label: 'Focused Design' }
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="border border-neutral-200 bg-[#fafafa] rounded-xl p-6 hover:border-[#b08263]/50 hover:bg-white hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 cursor-pointer"
-              >
-                <div className="h-48 w-full bg-neutral-100 rounded-lg mb-6 flex items-center justify-center border border-neutral-200/50 overflow-hidden relative">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/5"></div>
-                  <span className="font-display text-[#b08263] group-hover:scale-110 transition-transform duration-300 text-lg tracking-wider">
-                    {item.title}
-                  </span>
-                </div>
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h4 className="font-medium text-neutral-900 text-base">{item.title}</h4>
-                    <p className="text-xs text-neutral-500 mt-1">{item.type}</p>
+            {topProducts.length > 0 ? (
+              topProducts.map((item, idx) => (
+                <Link
+                  key={idx}
+                  to="/trang-tri-nha"
+                  state={{ selectedProduct: item }}
+                  className="border border-neutral-200 bg-[#fafafa] rounded-xl p-6 hover:border-[#b08263]/50 hover:bg-white hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 cursor-pointer block"
+                >
+                  <div className="h-48 w-full bg-neutral-100 rounded-lg mb-6 flex items-center justify-center border border-neutral-200/50 overflow-hidden relative">
+                    <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
                   </div>
-                  <span className="text-[10px] text-[#b08263] bg-[#b08263]/10 px-2 py-0.5 rounded border border-[#b08263]/20">
-                    {item.label}
-                  </span>
+                  <div className="flex justify-between items-start">
+                    <div className="pr-2">
+                      <h4 className="font-medium text-neutral-900 text-sm sm:text-base line-clamp-1">{item.name}</h4>
+                      <p className="text-xs text-neutral-500 mt-1">{item.price.toLocaleString('vi-VN')}đ</p>
+                    </div>
+                    <span className="text-[10px] text-[#b08263] bg-[#b08263]/10 px-2 py-0.5 rounded border border-[#b08263]/20 whitespace-nowrap">
+                      Đã bán: {item.sold}
+                    </span>
+                  </div>
+                </Link>
+              ))
+            ) : (
+              // Loading placeholders
+              [1, 2, 3, 4].map((_, idx) => (
+                <div key={idx} className="border border-neutral-200 bg-[#fafafa] rounded-xl p-6 animate-pulse">
+                  <div className="h-48 w-full bg-neutral-200 rounded-lg mb-6"></div>
+                  <div className="h-4 bg-neutral-200 rounded w-3/4 mb-2"></div>
+                  <div className="h-3 bg-neutral-200 rounded w-1/2"></div>
                 </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </section>
